@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Offense.unity
     guid: e51cddc0f4543cd4089403c67f62c755
+  - enabled: 1
+    path: Assets/Scenes/GAME OVER.unity
+    guid: 287652637c39aad4dbe7f9ab86ce6733
   m_configObjects: {}

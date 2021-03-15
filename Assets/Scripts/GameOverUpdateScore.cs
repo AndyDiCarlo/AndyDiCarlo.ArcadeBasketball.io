@@ -2,27 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class MenuButton : MonoBehaviour
+public class GameOverUpdateScore : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.GetComponent<Text>().text = "Score: " + Score.Points; 
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
-    }
-
-    public void changeSceneO() {
-        SceneManager.LoadScene("offense");
-    }
-    public void changeSceneD() {
-        SceneManager.LoadScene("defense");
     }
 }

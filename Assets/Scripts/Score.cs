@@ -4,25 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuButton : MonoBehaviour
+public class Score : MonoBehaviour
 {
+    public static int Points;
+    public static int HighPoints = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Points = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
     }
-
-    public void changeSceneO() {
-        SceneManager.LoadScene("offense");
+    public void Make() {
+        Points++;
     }
-    public void changeSceneD() {
-        SceneManager.LoadScene("defense");
+    public void Miss() {
+        SceneManager.LoadScene("Game Over");
     }
 }
