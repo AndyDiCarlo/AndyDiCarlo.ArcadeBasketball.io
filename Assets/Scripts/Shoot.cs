@@ -21,32 +21,12 @@ public class Shoot : Basket
     }
 
     //Move Arrow
-    void Update()
-    {
-       /* if (arrow.transform.position.x < 4.7f && right)
-        {
-            arrow.transform.position += new Vector3(arrowSpeed, 0, 0);
-        }
-        if (arrow.transform.position.x >= 4.7f)
-        {
-            right = false;
-        }
-        if (right == false)
-        {
-            arrow.transform.position -= new Vector3(arrowSpeed, 0, 0);
-        }
-        if (arrow.transform.position.x <= -4.7f)
-        {
-            right = true;
-        }*/
-    }
     void Update() { 
         
         if(!GameObject.Find("Ball(Clone)"))
         {
             ballClone = Instantiate(ball, new Vector3(-4,-1,0), transform.rotation);
         }
-        */
 
         //Shoot basketball
         if (Input.GetMouseButtonDown(0))

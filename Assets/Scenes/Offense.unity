@@ -565,7 +565,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 0}
   ball: {fileID: 5211189211551345471, guid: 7f01aae0cea734846ba086fdb3588af7, type: 3}
-  ballPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1106140390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,12 +1275,12 @@ PrefabInstance:
     - target: {fileID: 5211189211551345411, guid: 7f01aae0cea734846ba086fdb3588af7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.78
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 5211189211551345411, guid: 7f01aae0cea734846ba086fdb3588af7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.55
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 5211189211551345411, guid: 7f01aae0cea734846ba086fdb3588af7,
         type: 3}
