@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Shoot : Basket
@@ -21,7 +21,7 @@ public class Shoot : Basket
     }
 
     //Move Arrow
-    void FixedUpdate()
+    void Update()
     {
        /* if (arrow.transform.position.x < 4.7f && right)
         {
@@ -46,6 +46,7 @@ public class Shoot : Basket
         {
             ballClone = Instantiate(ball, new Vector3(-4,-1,0), transform.rotation);
         }
+        */
 
         //Shoot basketball
         if (Input.GetMouseButtonDown(0))
@@ -82,7 +83,7 @@ public class Shoot : Basket
 
         //if (!OnTriggerEnter())
         //{
-         //   arrow.GetComponent<Renderer>().enabled = false;
+        //   arrow.GetComponent<Renderer>().enabled = false;
         //    Instantiate(gameOver, new Vector3(0.31f, 0.2f, 0), transform.rotation);
         //    Invoke("restart", 2);
         //}
