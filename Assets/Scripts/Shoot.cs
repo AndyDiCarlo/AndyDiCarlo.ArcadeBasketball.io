@@ -4,26 +4,26 @@ using System.Collections;
 public class Shoot : Basket
 {
     public GameObject ball; //reference to the ball
-    private Vector3 throwSpeed = new Vector3(0, 1, 0); //This value is a guaranteed basket
-    public Vector3 ballPos; //starting ball position
+    private Vector3 throwSpeed = new Vector3(1, 1, 0); //This value is a guaranteed basket
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
     private GameObject ballClone; //we don't use the original prefab
-    //public GameObject meter;
-    public GameObject arrow;
-    private float arrowSpeed = 0.3f; //Difficulty, higher value = faster arrow movement
+    private float mouseSpeed = 200f; //Difficulty, higher value = faster arrow movement
     private bool right = true; //used to reverse arrow movement
+    private Vector3 start;
+    private Vector3 end;
     //public GameObject gameOver; //game over text
 
     //Gravity
     void Start()
     {
-        Physics.gravity = new Vector3(0, -1, 0);
+        //Physics.gravity = new Vector3(0, -1, 0);
+        ball.GetComponent<Rigidbody2D>().gravityScale = 0f;
     }
 
     //Move Arrow
     void FixedUpdate()
     {
-        if (arrow.transform.position.x < 4.7f && right)
+       /* if (arrow.transform.position.x < 4.7f && right)
         {
             arrow.transform.position += new Vector3(arrowSpeed, 0, 0);
         }
@@ -38,22 +38,42 @@ public class Shoot : Basket
         if (arrow.transform.position.x <= -4.7f)
         {
             right = true;
+        }*/
+    }
+    void Update() { 
+        
+        if(!GameObject.Find("Ball(Clone)"))
+        {
+            ballClone = Instantiate(ball, new Vector3(-4,-1,0), transform.rotation);
         }
 
-
         //Shoot basketball
-        if (Input.GetMouseButtonDown(0) && !thrown)
+        if (Input.GetMouseButtonDown(0))
         {
             thrown = true;
-            ballClone = Instantiate(ball, ballPos, transform.rotation) as GameObject;
-            throwSpeed.y = throwSpeed.y + arrow.transform.position.x;
-            throwSpeed.z = throwSpeed.z + arrow.transform.position.x;
-            ballClone.GetComponent<Rigidbody2D>().AddForce(throwSpeed, ForceMode2D.Impulse);
+            
+            start = Input.mousePosition;
+
+
+            //throwSpeed.y = throwSpeed.y + arrow.transform.position.x;
+            //throwSpeed.z = throwSpeed.z + arrow.transform.position.x;
+            //ballClone.GetComponent<Rigidbody2D>().AddForce(throwSpeed, ForceMode2D.Impulse);
             //audio.Play(); //play shoot sound
         }
 
+        if (Input.GetMouseButtonUp(0))
+        {
+            Vector3 distance = Input.mousePosition - start;
+            
+            throwSpeed.y = (throwSpeed.y + distance.magnitude) * 1.5f;
+            throwSpeed.x = throwSpeed.x + distance.magnitude;
+            distance.Normalize();
+            ballClone.GetComponent<Rigidbody2D>().gravityScale = 2f;
+            ballClone.GetComponent<Rigidbody2D>().AddForce(throwSpeed + distance);
+        }
+
         //Destroy basketball
-        if (ballClone != null && ballClone.transform.position.y < -2.5)
+        if (ballClone != null && ballClone.transform.position.y < -5)
         {
             Destroy(ballClone);
             thrown = false;
