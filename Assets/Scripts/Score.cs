@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Points = Shoot.scorePoints;
+        GetComponent<TextMeshProUGUI>().text = "Points: " + Points.ToString();
+
+
     }
     public void Make() {
         Points++;
@@ -25,7 +30,5 @@ public class Score : MonoBehaviour
             HoopMovement.increaseSpeed();
         }
     }
-    public void Miss() {
-        SceneManager.LoadScene("Game Over");
-    }
+    
 }

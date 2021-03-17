@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Shoot : Basket
 {
@@ -13,6 +15,8 @@ public class Shoot : Basket
     private Vector3 end;
     private int lives;
     public static int scorePoints;
+ 
+
     //public GameObject gameOver; //game over text
 
     //Gravity
@@ -25,6 +29,9 @@ public class Shoot : Basket
 
     //Move Arrow
     void Update() { 
+        if(lives < 1) {
+            miss();
+        }
         
         if(!GameObject.Find("Ball(Clone)"))
         {
@@ -63,6 +70,8 @@ public class Shoot : Basket
             thrown = false;
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
             lives--;
+            var livesText = GameObject.FindWithTag("lives");
+            livesText.GetComponent<TextMeshProUGUI>().text = "Lives: " + lives.ToString();
             Debug.Log(lives);
         }
         
@@ -81,6 +90,9 @@ public class Shoot : Basket
         thrown = false;
         throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
         Debug.Log(lives);
+    }
+    public void miss() {
+        SceneManager.LoadScene("Game Over");
     }
     void restart()
     {
