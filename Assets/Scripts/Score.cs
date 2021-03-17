@@ -21,6 +21,9 @@ public class Score : MonoBehaviour
     }
     public void Make() {
         Points++;
+        if(Points % 5 == 0){
+            HoopMovement.increaseSpeed();
+        }
     }
     public void Miss() {
         SceneManager.LoadScene("Game Over");
