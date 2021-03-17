@@ -11,11 +11,14 @@ public class Shoot : Basket
     private bool right = true; //used to reverse arrow movement
     private Vector3 start;
     private Vector3 end;
+    private int lives;
+    public static int scorePoints;
     //public GameObject gameOver; //game over text
 
     //Gravity
     void Start()
     {
+        lives = 3;
         //Physics.gravity = new Vector3(0, -1, 0);
         ball.GetComponent<Rigidbody2D>().gravityScale = 0f;
     }
@@ -59,7 +62,10 @@ public class Shoot : Basket
             Destroy(ballClone);
             thrown = false;
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
+            lives--;
+            Debug.Log(lives);
         }
+        
 
         //if (!OnTriggerEnter())
         //{
@@ -67,6 +73,14 @@ public class Shoot : Basket
         //    Instantiate(gameOver, new Vector3(0.31f, 0.2f, 0), transform.rotation);
         //    Invoke("restart", 2);
         //}
+    }
+    public void make() {
+        scorePoints++;
+        Debug.Log(scorePoints);
+        Destroy(ballClone);
+        thrown = false;
+        throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
+        Debug.Log(lives);
     }
     void restart()
     {

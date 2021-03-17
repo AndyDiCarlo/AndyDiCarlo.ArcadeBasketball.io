@@ -5,12 +5,12 @@ using TMPro;
 
 public class Basket : MonoBehaviour
 {
-    public TextMeshPro score; //The score
-
-    void OnTriggerEnter() //if ball hits basket collider
+    public static int scorePoints;
+    void OnTriggerEnter2D() //if ball hits basket collider
     {
-        int updatedScore = int.Parse(score.GetComponent<TextMeshPro>().text) + 1; //add 1 to score
-        score.GetComponent<TextMeshPro>().text = updatedScore.ToString();
+        GameObject ball = GameObject.Find("Ball(Clone)");
+
+        ball.GetComponent<Shoot>().make();
         //score.GetComponent().text = currentScore.ToString();
     }
 
