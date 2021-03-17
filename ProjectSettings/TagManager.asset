@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Offense
   - Defense
+  - Hoop
   layers:
   - Default
   - TransparentFX

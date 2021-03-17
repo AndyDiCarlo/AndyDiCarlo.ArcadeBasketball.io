@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Shoot : Basket
 {
@@ -10,7 +11,10 @@ public class Shoot : Basket
     private float mouseSpeed = 200f; //Difficulty, higher value = faster arrow movement
     private bool right = true; //used to reverse arrow movement
     private Vector3 start;
-    private Vector3 end;
+    private float end = 3;
+
+    //Score scoring = GameObject.FindGameObjectWithTag("Offense").GetComponent<Score>();
+
     //public GameObject gameOver; //game over text
 
     //Gravity
@@ -46,11 +50,21 @@ public class Shoot : Basket
         {
             Vector3 distance = Input.mousePosition - start;
             
-            throwSpeed.y = (throwSpeed.y + distance.magnitude) * 1.5f;
+            throwSpeed.y = (throwSpeed.y + distance.magnitude) * 2f;
             throwSpeed.x = throwSpeed.x + distance.magnitude;
             distance.Normalize();
             ballClone.GetComponent<Rigidbody2D>().gravityScale = 2f;
             ballClone.GetComponent<Rigidbody2D>().AddForce(throwSpeed + distance);
+            ballClone.GetComponent<Rigidbody2D>().AddTorque(distance.magnitude/10, ForceMode2D.Impulse);
+        }
+
+        void OnTriggerEnter2d(Collider Other)
+        {
+            if(Other.tag == "Hoop")
+            {
+                Debug.Log("Score!");
+                //scoring.Make();
+            }
         }
 
         //Destroy basketball
@@ -59,6 +73,13 @@ public class Shoot : Basket
             Destroy(ballClone);
             thrown = false;
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
+
+            end--;
+            if (end == 0)
+            {
+                SceneManager.LoadScene("Game Over");
+            }
+
         }
 
         //if (!OnTriggerEnter())

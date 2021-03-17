@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Miss : MonoBehaviour
+public class Restart : MonoBehaviour
 {
-    public void OnTriggerEnter()
+    public void resetGame()
     {
-        SceneManager.LoadScene("Game Over");
+        SceneManager.LoadScene("Offense");
     }
 }
