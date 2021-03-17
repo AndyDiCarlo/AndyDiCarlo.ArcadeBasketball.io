@@ -58,7 +58,7 @@ public class Shoot : Basket
             ballClone.GetComponent<Rigidbody2D>().AddTorque(distance.magnitude/10, ForceMode2D.Impulse);
         }
 
-        void OnTriggerEnter2d(Collider Other)
+        void OnTriggerEnter2d(Collider2D Other)
         {
             if(Other.tag == "Hoop")
             {
@@ -74,7 +74,7 @@ public class Shoot : Basket
             thrown = false;
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
 
-            end--;
+            //end--;
             if (end == 0)
             {
                 SceneManager.LoadScene("Game Over");
