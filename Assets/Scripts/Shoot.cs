@@ -15,6 +15,7 @@ public class Shoot : Basket
     private Vector3 end;
     private int lives;
     public static int scorePoints;
+    private bool madeBasket = false;
  
 
     //public GameObject gameOver; //game over text
@@ -90,6 +91,7 @@ public class Shoot : Basket
         thrown = false;
         throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
         Debug.Log(lives);
+        madeBasket = true;
     }
     public void miss() {
         SceneManager.LoadScene("Game Over");
