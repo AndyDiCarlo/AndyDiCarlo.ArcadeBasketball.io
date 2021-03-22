@@ -6,7 +6,8 @@ public class HoopMovement : MonoBehaviour
 {
 	
 	//change this for speed
-	private float speed = 0.5f;
+	private static float speed = 0.5f;
+	private float increment = 0;
 	
 	//placeholder variable
 	private float t;
@@ -36,14 +37,10 @@ public class HoopMovement : MonoBehaviour
 			t = 0;
 		}   
 		
-		//increase speed if newScore is divisible by 5	then resets newScore
-		/*
-		if (newScore % 5 == 0){
-			speed += 1;
-			newScore = 0;
-		}
-		*/
 		
+   }
+   public static void increaseSpeed(){
+	   speed += 0.3f;
    }
 
 }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Offense
   - Defense
+  - net
+  - score
+  - lives
   layers:
   - Default
   - TransparentFX
