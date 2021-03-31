@@ -26,14 +26,12 @@ public class Jump : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && grounded <= 0){
             rb.velocity = Vector2.up * jumpForce;
-            grounded = 3.0f;
-            Debug.Log(grounded);
+            grounded = 2f;;
         }
 
         if(grounded > 0)
         {
             grounded -= Time.deltaTime;
-            Debug.Log(grounded);
         }
     }
     void FixedUpdate(){
