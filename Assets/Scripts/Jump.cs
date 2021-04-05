@@ -5,14 +5,21 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
 
-    
-	private Vector2 jump;
+    public static Jump Instance;
+    private Vector2 jump;
     //change this to edit the speed of the jump
     public float jumpForce = 8.0f;
     public float grounded = 0.0f;
     public Transform groundCheck;
     public LayerMask groundLayer;
     Rigidbody2D rb;
+    void OnTriggerEnter2D()// if ball hits blocker collider
+    {
+        Instance = this;
+        GameObject ball = GameObject.Find("Ball(Clone)");
+        ball.GetComponent<Autoshoot>().block();
+        DontDestroyOnLoad(this);
+    }
 
     // Start is called before the first frame update
     void Start()
