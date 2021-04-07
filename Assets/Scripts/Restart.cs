@@ -8,6 +8,6 @@ public class Restart : MonoBehaviour
 {
     public void resetGame()
     {
-        SceneManager.LoadScene("Offense");
+        SceneManager.LoadScene("Defense");
     }
 }
