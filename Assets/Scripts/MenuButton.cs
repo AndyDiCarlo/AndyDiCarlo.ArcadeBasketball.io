@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
@@ -19,9 +20,9 @@ public class MenuButton : MonoBehaviour
     }
 
     public void changeSceneO() {
-        Application.LoadLevel("offense");
+        SceneManager.LoadScene("offense");
     }
     public void changeSceneD() {
-        Application.LoadLevel("defense");
+        SceneManager.LoadScene("defense");
     }
 }

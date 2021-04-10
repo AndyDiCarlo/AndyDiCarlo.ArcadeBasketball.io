@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Offense
   - Defense
+  - net
+  - score
+  - lives
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - HighScore
   layers:
   - Default
   - TransparentFX
