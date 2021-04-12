@@ -8,6 +8,7 @@ public class UpdateHighScore : MonoBehaviour {
 
     //Start is called before the first frame update
 
+
     public static int highpoints;
     public GameObject highscoretext;
     public GameObject scoretext;
@@ -25,10 +26,11 @@ public class UpdateHighScore : MonoBehaviour {
         //gameObject.GetComponent<TextMeshProUGUI>().text = "High Score: " + highpoints;
         highscoretext.GetComponent<TextMeshProUGUI>().text = "High Score: " + highpoints;
         scoretext.GetComponent<TextMeshProUGUI>().text = "Score: " + points;
+
     }
 
     // Update is called once per frame
     void Update() {
-        
+
     }
 }
