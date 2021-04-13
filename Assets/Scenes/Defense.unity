@@ -202,7 +202,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Will Begin in 5 Seconds!
+  m_Text: Game Will Begin in 6 Seconds!
 --- !u!222 &240227483
 CanvasRenderer:
   m_ObjectHideFlags: 0

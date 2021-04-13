@@ -45,9 +45,10 @@ public class AIShoot : Basket
         new Vector3(398.6f, 597.9f), new Vector3(398.9f, 596.9f), new Vector3(408.2f, 612.5f), new Vector3(412.2f, 617.1f), new Vector3(395.9f, 593.9f), new Vector3(411.9f, 618.9f)};
 
         TimeToShoot -= Time.deltaTime;
+        StartWarningText.GetComponent<UnityEngine.UI.Text>().text = "Game Will Begin in " + Mathf.RoundToInt(TimeToShoot).ToString() + " Seconds!";
 
         //have Shoot basketball
-        if(TimeToShoot <= 0)
+        if (TimeToShoot <= 0)
         {
             StartWarningText.gameObject.SetActive(false);
             Vector3 MyVector = shotPower[Random.Range(0, shotPower.Length)];
