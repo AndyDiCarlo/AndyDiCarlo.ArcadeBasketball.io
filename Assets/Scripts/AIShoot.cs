@@ -97,6 +97,6 @@ public class AIShoot : Basket
     }
     public void scored()
     {
-        SceneManager.LoadScene("Game Over");
+        SceneManager.LoadScene("Game Over Defense");
     }
 }
