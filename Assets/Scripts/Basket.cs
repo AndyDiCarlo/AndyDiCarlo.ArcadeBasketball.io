@@ -6,7 +6,7 @@ using TMPro;
 public class Basket : MonoBehaviour
 {
     public static Basket Instance;
-    public int scorePoints;
+    public int scorePoints=0;
     void OnTriggerEnter2D() //if ball hits basket collider
     {
         Instance = this;
