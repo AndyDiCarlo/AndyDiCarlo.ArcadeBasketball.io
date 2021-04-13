@@ -25,4 +25,8 @@ public class MenuButton : MonoBehaviour
     public void changeSceneD() {
         SceneManager.LoadScene("defense");
     }
+    public void ShowGameInstructions()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
 }

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Over Defense.unity
     guid: c79bb0724815c0c4eab010326a808fde
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: 9215fbbd368e4754bb070cbf7c29a9f6
   m_configObjects: {}
