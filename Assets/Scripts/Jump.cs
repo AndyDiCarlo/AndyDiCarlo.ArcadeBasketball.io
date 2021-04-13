@@ -17,7 +17,8 @@ public class Jump : MonoBehaviour
     {
         Instance = this;
         GameObject ball = GameObject.Find("Ball(Clone)");
-        ball.GetComponent<Autoshoot>().block();
+        //ball.GetComponent<Autoshoot>().block();
+        ball.GetComponent<AIShoot>().blocked();
         DontDestroyOnLoad(this);
     }
 
