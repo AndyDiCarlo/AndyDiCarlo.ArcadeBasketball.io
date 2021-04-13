@@ -53,6 +53,7 @@ public class leaderboard : MonoBehaviour
     void Start()
     {
 
+        
         points = Basket.Instance.scorePoints;
         
         HiScoreText0 = GameObject.FindGameObjectWithTag("0");
@@ -69,18 +70,18 @@ public class leaderboard : MonoBehaviour
         Leaders.Add(new Leader() { Name = PlayerPrefs.GetString("HighScoreSTR3", "JKL"), Score = PlayerPrefs.GetInt("HighScore3", 0) });
         Leaders.Add(new Leader() { Name = PlayerPrefs.GetString("HighScoreSTR4", "MNO"), Score = PlayerPrefs.GetInt("HighScore4", 0) });
 
-
+        HiScoreText0.GetComponent<TextMeshProUGUI>().text = Leaders[0].ToString();
+        HiScoreText1.GetComponent<TextMeshProUGUI>().text = Leaders[1].ToString();
+        HiScoreText2.GetComponent<TextMeshProUGUI>().text = Leaders[2].ToString();
+        HiScoreText3.GetComponent<TextMeshProUGUI>().text = Leaders[3].ToString();
+        HiScoreText4.GetComponent<TextMeshProUGUI>().text = Leaders[4].ToString();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        HiScoreText0.GetComponent<TextMeshProUGUI>().text = Leaders[0].ToString();
-        HiScoreText1.GetComponent<TextMeshProUGUI>().text = Leaders[1].ToString();
-        HiScoreText2.GetComponent<TextMeshProUGUI>().text = Leaders[2].ToString();
-        HiScoreText3.GetComponent<TextMeshProUGUI>().text = Leaders[3].ToString();
-        HiScoreText4.GetComponent<TextMeshProUGUI>().text = Leaders[4].ToString();
+
     }
 
     public void resetHighScores() {
@@ -111,6 +112,12 @@ public class leaderboard : MonoBehaviour
 
         }
         */
+
+        HiScoreText0.GetComponent<TextMeshProUGUI>().text = Leaders[0].ToString();
+        HiScoreText1.GetComponent<TextMeshProUGUI>().text = Leaders[1].ToString();
+        HiScoreText2.GetComponent<TextMeshProUGUI>().text = Leaders[2].ToString();
+        HiScoreText3.GetComponent<TextMeshProUGUI>().text = Leaders[3].ToString();
+        HiScoreText4.GetComponent<TextMeshProUGUI>().text = Leaders[4].ToString();
     }
 
 
@@ -155,5 +162,11 @@ public class leaderboard : MonoBehaviour
             Leaders.RemoveAt(Leaders.Count - 1);
         }
         PlayerPrefs.Save();
+
+        HiScoreText0.GetComponent<TextMeshProUGUI>().text = Leaders[0].ToString();
+        HiScoreText1.GetComponent<TextMeshProUGUI>().text = Leaders[1].ToString();
+        HiScoreText2.GetComponent<TextMeshProUGUI>().text = Leaders[2].ToString();
+        HiScoreText3.GetComponent<TextMeshProUGUI>().text = Leaders[3].ToString();
+        HiScoreText4.GetComponent<TextMeshProUGUI>().text = Leaders[4].ToString();
     }
 }
