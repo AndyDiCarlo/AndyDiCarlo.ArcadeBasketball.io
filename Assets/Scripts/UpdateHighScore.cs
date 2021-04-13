@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class UpdateHighScore : MonoBehaviour {
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
+    public int points = Basket.Instance.scorePoints;
+    public static int highpoints = 0;
     void Start() {
-        Debug.Log(Score.Points);
-        Debug.Log(Score.HighPoints);
-        if(Score.Points > Score.HighPoints) {
-            Score.HighPoints = Score.Points;
+        Debug.Log(points);
+        Debug.Log(highpoints);
+        if(points > highpoints) {
+            highpoints = points;
         }
-        gameObject.GetComponent<Text>().text = "High Score: " + Score.HighPoints;
+        gameObject.GetComponent<Text>().text = "High Score: " + highpoints;
     }
 
     // Update is called once per frame

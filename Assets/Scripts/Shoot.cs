@@ -5,6 +5,7 @@ using TMPro;
 
 public class Shoot : Basket
 {
+    public static Shoot Instance;
     public GameObject ball; //reference to the ball
     private Vector3 throwSpeed = new Vector3(1, 1, 0); //This value is a guaranteed basket
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
@@ -14,7 +15,6 @@ public class Shoot : Basket
     private Vector3 start;
     private Vector3 end;
     private int lives;
-    public static int scorePoints;
     private bool madeBasket = false;
  
 
@@ -23,6 +23,7 @@ public class Shoot : Basket
     //Gravity
     void Start()
     {
+        Instance = this;
         lives = 3;
         //Physics.gravity = new Vector3(0, -1, 0);
         ball.GetComponent<Rigidbody2D>().gravityScale = 0f;
@@ -65,8 +66,7 @@ public class Shoot : Basket
         }
 
         //Destroy basketball
-        if (ballClone != null && ballClone.transform.position.y < -5)
-        {
+        if(ballClone != null && ballClone.transform.position.y < -5) {
             Destroy(ballClone);
             thrown = false;
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
@@ -75,7 +75,7 @@ public class Shoot : Basket
             livesText.GetComponent<TextMeshProUGUI>().text = "Lives: " + lives.ToString();
             Debug.Log(lives);
         }
-        
+
 
         //if (!OnTriggerEnter())
         //{
@@ -85,13 +85,15 @@ public class Shoot : Basket
         //}
     }
     public void make() {
-        scorePoints++;
-        Debug.Log(scorePoints);
         Destroy(ballClone);
+        Basket.Instance.scorePoints++;
+        Debug.Log("Points: " + Basket.Instance.scorePoints);
         thrown = false;
         throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
         Debug.Log(lives);
         madeBasket = true;
+        var pointsText = GameObject.FindWithTag("score");
+        pointsText.GetComponent<TextMeshProUGUI>().text = "Points: " + Basket.Instance.scorePoints.ToString();
     }
     public void miss() {
         SceneManager.LoadScene("Game Over");
