@@ -8,6 +8,7 @@ public class AIShoot : Basket
 {
     public static AIShoot instance;
     public GameObject BallDefense; //reference to the ball
+    public GameObject StartWarningText;
     private Vector3 throwSpeed = new Vector3(1, 1, 0); //This value is a guaranteed basket
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
     private GameObject ballClone; //we don't use the original prefab
@@ -48,6 +49,7 @@ public class AIShoot : Basket
         //have Shoot basketball
         if(TimeToShoot <= 0)
         {
+            StartWarningText.gameObject.SetActive(false);
             Vector3 MyVector = shotPower[Random.Range(0, shotPower.Length)];
             ballClone.GetComponent<Rigidbody2D>().gravityScale = 2f;
             ballClone.GetComponent<Rigidbody2D>().AddForce(MyVector);
