@@ -8,6 +8,9 @@ public class Restart : MonoBehaviour
 {
     public void resetGame()
     {
-        SceneManager.LoadScene("Defense");
+        SceneManager.LoadScene("Offense");
+    }
+    public void resetMenu() {
+        SceneManager.LoadScene("Main Menu");
     }
 }
