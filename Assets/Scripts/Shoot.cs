@@ -24,7 +24,7 @@ public class Shoot : Basket
     void Start()
     {
         Instance = this;
-        lives = 3;
+        lives = 10;
         //Physics.gravity = new Vector3(0, -1, 0);
         ball.GetComponent<Rigidbody2D>().gravityScale = 0f;
     }
@@ -79,7 +79,7 @@ public class Shoot : Basket
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
             lives--;
             var livesText = GameObject.FindWithTag("lives");
-            livesText.GetComponent<TextMeshProUGUI>().text = "Lives: " + lives.ToString();
+            livesText.GetComponent<TextMeshProUGUI>().text = "Shots Left: " + lives.ToString();
             Debug.Log(lives);
         }
 
