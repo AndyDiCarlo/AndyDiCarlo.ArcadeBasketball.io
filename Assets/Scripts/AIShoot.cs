@@ -54,9 +54,9 @@ public class AIShoot : Basket
             Vector3 MyVector = shotPower[Random.Range(0, shotPower.Length)];
             ballClone.GetComponent<Rigidbody2D>().gravityScale = 2f;
             ballClone.GetComponent<Rigidbody2D>().AddForce(MyVector);
-            if (Basket.Instance.scorePoints % 5 == 0)//Increase speed of shot every 5 successful blocks
+            if (Basket.Instance.scorePoints > 5)//Increase speed of shot after 5 successful blocks
             {
-                TimeToShoot = Random.Range(3f,6f);
+                TimeToShoot = Random.Range(3f,5f);
             }
             else
             {
