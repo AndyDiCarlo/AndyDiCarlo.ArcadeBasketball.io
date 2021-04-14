@@ -10,4 +10,10 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene("Offense");
     }
+    public void resetGame_D() {
+        SceneManager.LoadScene("Defense");
+    }
+    public void resetMenu() {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

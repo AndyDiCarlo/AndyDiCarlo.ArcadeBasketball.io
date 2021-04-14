@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoopMovement : MonoBehaviour
+public class HoopMovement : Basket
 {
 	
 	//change this for speed
@@ -17,8 +17,8 @@ public class HoopMovement : MonoBehaviour
 	public float newScore = 1;
 	
 	//change these values to edit the distance
-	private Vector3 left = new Vector3(-3, 0, 0);
-	private Vector3 right = new Vector3(3, 0, 0);
+	private Vector3 left = new Vector3(-.5f, 0, 0);
+	private Vector3 right = new Vector3(.5f, 0, 0);
 
     // Update is called once per frame
     void Update()

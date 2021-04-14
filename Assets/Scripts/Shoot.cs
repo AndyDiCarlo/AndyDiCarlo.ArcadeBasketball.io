@@ -11,7 +11,7 @@ public class Shoot : Basket
     private bool thrown = false; //if ball has been thrown, prevents 2 or more balls
     private GameObject ballClone; //we don't use the original prefab
     private float mouseSpeed = 200f; //Difficulty, higher value = faster arrow movement
-    private bool right = true; //used to reverse arrow movement
+    private float ballTravelTime = 0f; //track time since throw
     private Vector3 start;
     private Vector3 end;
     private int lives;
@@ -24,7 +24,7 @@ public class Shoot : Basket
     void Start()
     {
         Instance = this;
-        lives = 3;
+        lives = 10;
         //Physics.gravity = new Vector3(0, -1, 0);
         ball.GetComponent<Rigidbody2D>().gravityScale = 0f;
     }
@@ -43,7 +43,7 @@ public class Shoot : Basket
         //Shoot basketball
         if (Input.GetMouseButtonDown(0))
         {
-            thrown = true;
+            //thrown = true;
             
             start = Input.mousePosition;
 
@@ -63,16 +63,23 @@ public class Shoot : Basket
             distance.Normalize();
             ballClone.GetComponent<Rigidbody2D>().gravityScale = 2f;
             ballClone.GetComponent<Rigidbody2D>().AddForce(throwSpeed + distance);
+            ballTravelTime = 3f;
+            thrown = true;
+        }
+
+        if(ballTravelTime > 0)
+        {
+            ballTravelTime -= Time.deltaTime;
         }
 
         //Destroy basketball
-        if(ballClone != null && ballClone.transform.position.y < -5) {
+        if((ballClone != null && thrown == true) && (ballClone.transform.position.y < -5 || ballTravelTime <= 0f)) {
             Destroy(ballClone);
             thrown = false;
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
             lives--;
             var livesText = GameObject.FindWithTag("lives");
-            livesText.GetComponent<TextMeshProUGUI>().text = "Lives: " + lives.ToString();
+            livesText.GetComponent<TextMeshProUGUI>().text = "Shots Left: " + lives.ToString();
             Debug.Log(lives);
         }
 
