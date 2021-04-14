@@ -79,9 +79,10 @@ public class AIShoot : Basket
             thrown = false;
             throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
             //lives--;
-            var livesText = GameObject.FindWithTag("lives");
-            livesText.GetComponent<TextMeshProUGUI>().text = "Lives: " + lives.ToString();
-            Debug.Log(lives);
+            Basket_D.Instance.scorePoints++;
+            var livesText = GameObject.FindWithTag("score");
+            livesText.GetComponent<TextMeshProUGUI>().text = "Score: " + Basket_D.Instance.scorePoints.ToString();
+            Debug.Log(Basket_D.Instance.scorePoints);
         }
 
     }

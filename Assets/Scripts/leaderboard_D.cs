@@ -52,7 +52,7 @@ public class leaderboard_D : MonoBehaviour {
     void Start() {
 
 
-        points = Basket.Instance.scorePoints;
+        points = Basket_D.Instance.scorePoints;
 
         HiScoreText0 = GameObject.FindGameObjectWithTag("0");
         HiScoreText1 = GameObject.FindGameObjectWithTag("1");
@@ -94,6 +94,7 @@ public class leaderboard_D : MonoBehaviour {
         PlayerPrefs.SetInt("HighScore_D2", 0);
         PlayerPrefs.SetInt("HighScore_D3", 0);
         PlayerPrefs.SetInt("HighScore_D4", 0);
+
 
         PlayerPrefs.Save();
 

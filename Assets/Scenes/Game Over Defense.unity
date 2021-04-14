@@ -466,7 +466,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 851194849}
         m_MethodName: resetHighScores
         m_Mode: 1
         m_Arguments:
@@ -1275,12 +1275,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ad813ad1348e741ac8e3923d59e7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainIn: {fileID: 0}
-  HiScoreText0: {fileID: 0}
-  HiScoreText1: {fileID: 0}
-  HiScoreText2: {fileID: 0}
-  HiScoreText3: {fileID: 0}
-  HiScoreText4: {fileID: 0}
+  mainIn: {fileID: 1538283424}
+  HiScoreText0: {fileID: 1204596668}
+  HiScoreText1: {fileID: 2068647921}
+  HiScoreText2: {fileID: 534724938}
+  HiScoreText3: {fileID: 1640006221}
+  HiScoreText4: {fileID: 774418750}
   HighScore0: 
   HighScore1: 
   HighScore2: 
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 851194849}
         m_MethodName: checkLeaderboard
         m_Mode: 1
         m_Arguments:
@@ -3156,12 +3156,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1875325001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c34c788d1cbbc146aac7fada84882ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f0057fd15eedf0439348b0515bf1b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highpoints_D: 0
   highpoints: 0
-  highscoretext: {fileID: 947316410}
-  scoretext: {fileID: 1690929175}
+  highscoretext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!1 &2024761745
 GameObject:
   m_ObjectHideFlags: 0
