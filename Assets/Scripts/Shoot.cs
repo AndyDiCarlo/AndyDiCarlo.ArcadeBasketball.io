@@ -101,6 +101,12 @@ public class Shoot : Basket
         madeBasket = true;
         var pointsText = GameObject.FindWithTag("score");
         pointsText.GetComponent<TextMeshProUGUI>().text = "Points: " + Basket.Instance.scorePoints.ToString();
+
+        //edit this to change what intervals the hoop speeds up at
+        //current interval -> every 3 points
+        if(Basket.Instance.scorePoints % 3 == 0){
+            HoopMovement.increaseSpeed();
+        }
     }
     public void miss() {
         SceneManager.LoadScene("Game Over");

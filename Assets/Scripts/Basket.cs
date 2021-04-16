@@ -21,6 +21,6 @@ public class Basket : MonoBehaviour
     //Update is called once per frame
     void Start() {
         Instance = this;
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 }
