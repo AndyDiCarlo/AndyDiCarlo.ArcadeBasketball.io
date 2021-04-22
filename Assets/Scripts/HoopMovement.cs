@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HoopMovement : Basket
 {
 
+	//create instance of HoopMovement script
 	public static HoopMovement HInstance;
 
 	//change this for speed
@@ -24,6 +25,7 @@ public class HoopMovement : Basket
 	private Vector3 down = new Vector3(4,-2f, 0);
 
     // Update is called once per frame
+	//Controls movement of hoop over time
     void Update()
     {
 	
@@ -43,14 +45,14 @@ public class HoopMovement : Basket
 		
    }
 
-
+	//Set initial speed to zero
    void Start(){
 	   speed = 0;
    }
 
-   //increases the speed
+   //increases the speed of the hoop
    public static void increaseSpeed(){
-	   speed += 0.3f;
+	   speed += 0.1f;
    }
 
 }
