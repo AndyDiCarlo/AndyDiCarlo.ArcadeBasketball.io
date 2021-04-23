@@ -52,7 +52,7 @@ public class leaderboard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //Initialize all of the High Score fields with base input
         
         points = Basket.Instance.scorePoints;
         
@@ -78,11 +78,6 @@ public class leaderboard : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void resetHighScores() {
         //resets on next reload
@@ -130,10 +125,7 @@ public class leaderboard : MonoBehaviour
             if(temp.Score > l.Score) {
                 break;
             }
-            
-            
-            //Debug.Log("1" + curPref + " : " + PlayerPrefs.GetString(curPref) + ", " + PlayerPrefs.GetInt(curPref));
-            //Debug.Log("1Leaders " + i + " : " + l);
+           
             i++;
 
         }

@@ -81,6 +81,7 @@ public class Shoot : Basket
     }
     public void make() {
         Destroy(ballClone);
+        Basket.Instance.scorePoints++;
         thrown = false;
         throwSpeed = new Vector3(0, 1, 0);//Reset perfect shot
         madeBasket = true;
