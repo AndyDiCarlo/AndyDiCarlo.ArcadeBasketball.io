@@ -76,10 +76,6 @@ public class leaderboard_D : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
 
     public void resetHighScores() {
         //resets on next reload

@@ -1121,6 +1121,7 @@ GameObject:
   - component: {fileID: 1659092341}
   - component: {fileID: 1659092344}
   - component: {fileID: 1659092343}
+  - component: {fileID: 1659092345}
   m_Layer: 0
   m_Name: Hoop
   m_TagString: Untagged
@@ -1225,6 +1226,21 @@ CircleCollider2D:
   m_Offset: {x: -0.59989643, y: -0.43775502}
   serializedVersion: 2
   m_Radius: 0.08029923
+--- !u!114 &1659092345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659092340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2e42a9eae37694bb1a28c3b0ed9002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePoints: 0
+  score: 0
+  newScore: 1
 --- !u!1 &2027689980
 GameObject:
   m_ObjectHideFlags: 0

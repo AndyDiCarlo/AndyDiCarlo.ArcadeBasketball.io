@@ -5,22 +5,19 @@ using TMPro;
 
 public class Basket : MonoBehaviour
 {
+    //instance of Basket and score tracker for offense
     public static Basket Instance;
     public int scorePoints = 0;
-    void OnTriggerEnter2D() //if ball hits basket collider
-    {
-        
-        
-        GameObject ball = GameObject.Find("Ball(Clone)");
 
+    //Trigger for when ball enters hoop on offense
+    void OnTriggerEnter2D() 
+    {
+        GameObject ball = GameObject.Find("Ball(Clone)");
         ball.GetComponent<Shoot>().make();
-        //score.GetComponent().text = currentScore.ToString();
-        
     }
 
     //Update is called once per frame
     void Start() {
         Instance = this;
-        DontDestroyOnLoad(this);
     }
 }

@@ -8,6 +8,7 @@ public class Miss : MonoBehaviour
 {
     public void OnTriggerEnter()
     {
+        //Load Game Over Scene
         SceneManager.LoadScene("Game Over");
     }
 }
